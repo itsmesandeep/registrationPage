@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        {% include 'cdnlines.html' %}
+
+        <title>EmployeePage</title>
+    </head>
+    <body>
+    <div class="jumbotron text-center">
+        <h1 class="display-3">EMPLOYEE DATA</h1>
+        <p class="lead">{{ edata.emp_name }}</p>
+{#        <p class="lead">#}
+{#            <a class="btn btn-primary btn-lg" href="Jumbo action link" role="button">Jumbo action name</a>#}
+{#        </p>#}
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <table class="table " >
+        <thead>
+        <th>ID</th>
+        <th>UserName</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Email</th>
+        <th>Mobile</th>
+        <th class="text-center">Modify</th>
+        </thead>
+        <tbody>
+        <tdata>
+            <td>{{ edata.emp_id }}</td>
+            <td>{{ edata.emp_username }}</td>
+            <td>{{ edata.emp_name }}</td>
+            <td>{{ edata.emp_age }}</td>
+            <td>{{ edata.emp_gender }}</td>
+            <td>{{ edata.emp_gender }}</td>
+            <td>{{ edata.emp_mobile }}</td>
+            <td class="text-center ">
+                    <a href="/update/{{ edata.id }}" > <input type="button" class="btn-sm btn-primary" value="update"></a>
+                    <a href="/delete/{{ edata.id }}"> <input type="button" class="btn-sm btn-danger" value="delete"></a>
+            </td>
+        </tdata>
+        </tbody>
+    </table>
+        </div>
+
+    </div>
+
+    </body>
+</html>

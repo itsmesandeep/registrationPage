@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>UpdateRegistration</title>
+        {% include 'cdnlines.html' %}
+
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="offset-md-3 col-md-6">
+                <h1 class="text-center">Update Data  Form</h1><br>
+                    <form method="POST">
+                        {% csrf_token %}
+
+                        <label for="empid">Enter Employee Id</label>
+                        <input type="number" name="empid" class="form-control" value="{{ data.emp_id }}">
+
+                        <label for="uname">Enter Employee User Name</label>
+                        <input type="text" name="uname" class="form-control" value="{{ data.emp_username }}">
+
+                        <label for="ename">Enter Employee Name</label>
+                        <input type="text" name="ename" class="form-control" value="{{ data.emp_name }}">
+
+                        <label for="eage">Enter Employee Age</label>
+                        <input type="text" name="eage" class="form-control" value="{{ data.emp_age}}">
+                        {% if male  %}
+                        <label>Enter Employee Gender</label><br>
+                        <br>
+                        <input type="radio" name="gender" value="Male" class="radio" checked >Male
+                        <input type="radio" name="gender" value="Female">Female<br><br>
+                        {% else %}
+                        <label>Enter Employee Gender</label><br>
+                        <br>
+                        <input type="radio" name="gender" value="Male" class="radio"  >Male
+                        <input type="radio" name="gender" value="Female" checked>Female<br><br>
+                        {% endif %}
+
+                        <label for="email">Enter Employee Email</label>
+                        <input type="email" name="email" class="form-control" value="{{ data.emp_email }}">
+
+                        <label for="Mobile">Enter Employee Mobile</label>
+                        <input type="number" name="mobile"class="form-control" value="{{ data.emp_mobile }}">
+
+                        <label for="pwd">Enter  Password</label>
+                        <input type="password" name="pwd" class="form-control" value="{{ data.emp_password }}">
+
+                        <label for="cpwd">Enter Confirm Password</label>
+                        <input type="password" name="cpwd" class="form-control" value="{{ data.emp_password }}">
+<br>
+
+                        <center>
+                        <input type="submit" value="UpdateDate" class="btn btn-primary">
+                        <input type="reset" value="RestData" class="btn btn-danger">
+                        </center>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
